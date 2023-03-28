@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<UserApi>
+<h1>@TempData["mesaj"]</h1>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.title</li>
+    }
+</ul>

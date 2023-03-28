@@ -1,0 +1,33 @@
+﻿@using System.Web
+@using WebApi.Models.Usom
+
+@{
+    ViewData["Title"] = "UsomDocument";
+}
+
+<h1>UsomDocument</h1>
+
+@model Document
+
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        @for (var i = 0; i < Model.totalCount; i++)
+        {
+            <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse@(i)" aria-expanded="false" aria-controls="flush-collapseOne">
+       @Model.models[i].title
+      </button>
+    </h2>
+    <div id="flush-collapse@(i)" class="accordion-collapse collapse" aria-labelledby="flush-heading@(i)" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+         @Model.models[i].desc
+
+         <a href="@Model.models[i].link"><h2>@Model.models[i].slug <b>İndir</b></h2></a>
+      </div>
+    </div>
+  </div>
+        }
+  
+
+</div>
